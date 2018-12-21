@@ -1,0 +1,45 @@
+{
+  "name": "cecilia-bassi",
+  "version": "0.1.0",
+  "description": "Cecília Bassi - Professional Project",
+  "main": "index.js",
+  "scripts": {
+    "linter": "eslint src/ && exit 0",
+    "serve": "NODE_ENV=development webpack-dashboard -- webpack-dev-server -d --hot --config webpack.config.js --watch --mode development",
+    "build:test": "NODE_ENV=test webpack --mode none",
+    "build:production": "NODE_ENV=production webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faelplg/cecilia-bassi.git"
+  },
+  "keywords": [],
+  "author": "faelplg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/faelplg/cecilia-bassi/issues"
+  },
+  "homepage": "https://github.com/faelplg/cecilia-bassi#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "autoprefixer": "^9.4.3",
+    "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.3",
+    "node-sass": "^4.9.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dashboard": "^2.0.0",
+    "webpack-dev-server": "^3.1.9"
+  }
+}
