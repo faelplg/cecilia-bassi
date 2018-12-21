@@ -1,6 +1,8 @@
+@import './assets/theme/variables.scss';
+@import './assets/theme/typography.scss';
 
 body {
-  background-color: $backgroundColor;
-  color: white;
-  fill: white;
+  background-color: $background-color;
+  color: $on-primary;
+  fill: $on-primary;
 }

@@ -1,8 +1,25 @@
-@import './assets/theme/variables.scss';
-@import './assets/theme/typography.scss';
 @import './assets/theme/theme.scss';
 
 :root, html, body {
   height: 100%;
   margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 64px auto;
+}
+
+.grid > .grid__top {
+  grid-row: 1;
+  grid-column: span 2;
+}
+.grid > .grid__left {
+  grid-row: 2;
+  grid-column: 1;
+}
+.grid > .grid__right {
+  grid-row: 2;
+  grid-column: 2;
 }
