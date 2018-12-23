@@ -1,13 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Parisienne');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 :root {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
 
 h1, h2, h3, h4, h5 {
   margin: 0;
+}
+
+#business__name {
+  font-weight: 300;
+}
+#business__headline {
+  font-weight: 300;
 }
 
 .text--center {
@@ -18,11 +25,4 @@ h1, h2, h3, h4, h5 {
 }
 .font--light {
   font-weight: 300;
-}
-
-#logo__name {
-  border-bottom: 4px solid steelblue;
-  margin-bottom: 3px;
-  letter-spacing: 2px;
-  line-height: 60px;
 }
