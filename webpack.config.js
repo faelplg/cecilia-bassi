@@ -9,11 +9,7 @@ const webpack = require('webpack');
 const devMode = process.env.NODE_ENV === 'development';
 
 let config = {
-  entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/dev-server',
-    './src/index.js'
-  ],
+  entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public'),
@@ -24,12 +20,6 @@ let config = {
       template: path.resolve(__dirname, 'src/index.html'),
       minify: false
     }),
-    // new HtmlWebpackPlugin({
-    //     template: './src/about.html',
-    //     inject: true,
-    //     chunks: ['index'],
-    //     filename: 'about.html'
-    // }),
     new MiniCssExtractPlugin({
       filename: 'styles.css'
     }),
@@ -60,7 +50,7 @@ let config = {
         'html-loader'
       ]
     },{
-      test: /\.(jpe?g|png|gif|svg)$/i,
+      test: /\.(jpg|png|gif|svg)$/i,
       loaders: [{
         loader: 'file-loader',
         options: {
