@@ -6,3 +6,27 @@ body {
   color: $on-light-bg;
   fill: $on-light-bg;
 }
+
+a {
+  text-decoration: none;
+}
+a,
+a:visited {
+  color: $mdc-theme-primary;
+}
+a:focus {
+  outline: none;
+}
+a:hover {
+  color: #eea5a5;
+}
+
+.border-bottom--primary {
+  border-bottom: 1px solid $mdc-theme-primary;
+}
+
+.no-margins {
+  margin: 0;
+}
+
+@import '@material/theme/mdc-theme';

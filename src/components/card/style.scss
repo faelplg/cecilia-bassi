@@ -1,0 +1,39 @@
+@import '@material/card/mdc-card';
+
+.portfolio__card {
+  min-height: 180px;
+  transition: all 0.9s ease-out;
+}
+
+.portfolio__card .mdc-card__primary-action {
+  padding: 24px;
+  min-height: 180px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+}
+.portfolio__card .mdc-card__primary-action:hover {
+  background-color: $primary-color-hue1;
+}
+
+.portfolio__card .mdc-card__primary-action .card__primary .card__title {
+  text-align: center;
+  font-size: 18px;
+  color: $mdc-theme-primary;
+  fill: $mdc-theme-primary;
+}
+.portfolio__card .mdc-card__primary-action .card__secondary {
+  display: none;
+  text-align: center;
+  font-weight: 300;
+  line-height: 24px;
+  font-size: 17px;
+  color: $mdc-theme-secondary;
+  fill: $mdc-theme-secondary;
+}
+.portfolio__card .mdc-card__primary-action:hover .card__secondary {
+  display: block;
+}
+.portfolio__card .mdc-card__primary-action:hover .card__primary .card__title {
+  display: none;
+}

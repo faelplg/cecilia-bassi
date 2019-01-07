@@ -4,50 +4,118 @@
   height: 100%;
   margin: 0;
 }
+body div {
+  box-sizing: border-box;
+}
 
 .grid {
   height: 100%;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 100px 80px auto;
+  grid-template-rows: 100px 64px 400px auto 112px;
 }
-
-.grid > .container__top {
-  grid-row: 1;
-}
-.grid > .container__portfolio {
-  grid-row: 2;
-  padding: 16px;
-}
-.grid__portfolio {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(100px, 1fr));
-  grid-auto-rows: auto;
-  grid-gap: 8px;
-}
-.portfolio__card {
-  height: 200px;
-  background-color: $secondary-color;
-}
-.grid > .container__cover {
-  grid-row: 3;
-  display: flex;
-  flex-flow: column;
-  padding: 16px;
-  justify-content: center;
-  align-items: center;
+.section__headline {
+  font-family: Raleway, sans-serif;
+  margin-bottom: 8px;
 }
 
 /*
- * Components
+ * Topp app bar section
  */
+.grid > .section__top {
+  grid-row: 1;
+}
 .top-app-bar {
   height: 100px;
   display: flex;
   flex-flow: row;
-  align-items: center;
-  background-color: $primary-color;
+  background-color: $mdc-theme-secondary;
+  padding: 16px;
 }
 .top-app-bar__title {
-  flex: auto;
+  flex: initial;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease-out;
 }
+/*
+ * Navigation section
+ */
+.grid > .section__navigation {
+  grid-row: 2;
+  display: flex;
+  flex-flow: row;
+  background-color: $secondary-color-hue1;
+  padding: 16px;
+  align-items: center;
+  border-bottom: 3px solid $mdc-theme-primary;
+}
+.grid > .section__navigation > div {
+  flex: auto;
+  align-self: center;
+}
+/*
+ * Cover section
+ */
+.grid > .section__cover {
+  grid-row: 3;
+  background: url('/assets/images/cover.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/*
+ * Portfolio section
+ */
+.grid > .section__portfolio {
+  grid-row: 4;
+  padding: 16px;
+}
+.grid__portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-auto-rows: auto;
+  grid-gap: 8px;
+}
+/*
+ * Footer section
+ */
+.section__footer {
+  background-color: $secondary-color-hue1;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  padding: 32px;
+}
+.section__footer .footer__left {
+  flex: initial;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+.section__footer .footer__right {
+  flex: auto;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+/*
+ * Responsive properties
+ */
+@media only screen and (max-width: 479px) {
+  .grid {
+    grid-template-rows: 100px auto 300px auto;
+  }
+  .top-app-bar__title {
+    flex: auto;
+  }
+  .grid > .section__navigation {
+    flex-flow: column;
+  }
+}
+
+@import './components/card/style.scss';

@@ -4,11 +4,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
+const webpack = require('webpack');
 
 const devMode = process.env.NODE_ENV === 'development';
 
 let config = {
-  entry: './src/index.js',
+  entry: [
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/dev-server',
+    './src/index.js'
+  ],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public'),
@@ -16,7 +21,7 @@ let config = {
   plugins: [
     new DashboardPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: path.resolve(__dirname, 'src/index.html'),
       minify: false
     }),
     // new HtmlWebpackPlugin({
@@ -27,7 +32,8 @@ let config = {
     // }),
     new MiniCssExtractPlugin({
       filename: 'styles.css'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   module: {
     rules: [{
@@ -36,12 +42,18 @@ let config = {
       loader: 'babel-loader'
     },{
       test: /\.(sa|sc|c)ss$/,
-      use: [
-        devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-        'css-loader',
-        'postcss-loader',
-        'sass-loader'
-      ]
+      use: [{
+        loader: devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+      },{
+        loader: 'css-loader'
+      },{
+        loader: 'postcss-loader'
+      },{
+        loader: 'sass-loader',
+        options: {
+          includePaths: ['./node_modules']
+        }
+      }]
     },{
       test: /\.html$/,
       loaders: [
@@ -58,11 +70,10 @@ let config = {
     }]
   },
   devServer: {
-    historyApiFallback: true,
-    contentBase: path.resolve(__dirname, 'src'),
+    contentBase: './src',
     watchContentBase: true,
     open: true,
-    clientLogLevel: 'none'
+    historyApiFallback: true
   }
 };
 module.exports = config;

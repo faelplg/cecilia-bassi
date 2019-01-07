@@ -3,12 +3,22 @@
  */
 $background-color: #FAFAFA;
 
-$primary-color: #e57373;
-$primary-color-hue1: #ffa4a2;
-$primary-color-hue2: #af4448;
+$primary-color: #E57373;
+$primary-color-hue1: #FFA4A2;
+$primary-color-hue2: #AF4448;
 
-$secondary-color: #bdbdbd;
-$secondary-color-hue1: #efefef;
-$secondary-color-hue2: #8d8d8d;
+$secondary-color: #222222;
+$secondary-color-hue1: #E5E5E5;
+$secondary-color-hue2: #4E4E4E;
 $on-light-bg: #000000;
-$on-dark-bg: #000000;
+$on-dark-bg: #FAFAFA;
+
+/*
+ * Material Design Theme
+ */
+$mdc-theme-primary: #E57373;
+$mdc-theme-on-primary: #222222;
+$mdc-theme-secondary: #222222;
+$mdc-theme-on-secondary: #FFFFFF;
+$mdc-theme-background: #FAFAFA;
+$mdc-theme-surface: #E5E5E5;
