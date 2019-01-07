@@ -116,6 +116,12 @@ body div {
   .grid > .section__navigation {
     flex-flow: column;
   }
+  .section__footer {
+    flex-flow: column;
+  }
+  .section__footer .footer__right > p {
+    font-size: 10px;
+  }
 }
 
 @import './components/card/style.scss';
