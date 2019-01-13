@@ -9,15 +9,27 @@ const webpack = require('webpack');
 const devMode = process.env.NODE_ENV === 'development';
 
 let config = {
-  entry: './src/index.js',
+  entry: {
+    index: './src/index.js'
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'public'),
   },
   plugins: [
     new DashboardPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.html'),
+      // inject: true,
+      chunks: ['index'],
+      filename: 'index.html',
+      minify: false
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/profile.html'),
+      // inject: 'body',
+      chunks: ['index'],
+      filename: 'profile.html',
       minify: false
     }),
     new MiniCssExtractPlugin({
@@ -63,7 +75,8 @@ let config = {
     contentBase: './src',
     watchContentBase: true,
     open: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    disableHostCheck: true
   }
 };
 module.exports = config;
