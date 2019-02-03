@@ -191,6 +191,17 @@ a:focus {
 a:hover {
   color: #eea5a5; }
 
+a.active {
+  color: #222222;
+  cursor: default; }
+
+.container {
+  margin: 16px; }
+
+@media only screen and (max-width: 599px) {
+  .container {
+    margin: 8px; } }
+
 .border-bottom--primary {
   border-bottom: 1px solid #E57373; }
 
@@ -369,6 +380,15 @@ body div {
   -ms-grid-rows: 100px 64px 400px auto 112px;
   grid-template-rows: 100px 64px 400px auto 112px; }
 
+.profile-grid {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+  grid-template-columns: auto;
+  -ms-grid-rows: 100px 64px auto 112px;
+  grid-template-rows: 100px 64px auto 112px; }
+
 .section__headline {
   font-family: Raleway, sans-serif;
   margin-bottom: 8px; }
@@ -376,7 +396,8 @@ body div {
 /*
  * Topp app bar section
  */
-.grid > .section__top {
+.grid > .section__top,
+.profile-grid > .section__top {
   -ms-grid-row: 1;
   grid-row: 1; }
 
@@ -398,7 +419,8 @@ body div {
 /*
  * Navigation section
  */
-.grid > .section__navigation {
+.grid > .section__navigation,
+.profile-grid > .section__navigation {
   -ms-grid-row: 2;
   grid-row: 2;
   display: flex;
@@ -408,7 +430,8 @@ body div {
   align-items: center;
   border-bottom: 3px solid #E57373; }
 
-.grid > .section__navigation > div {
+.grid > .section__navigation > div,
+.profile-grid > .section__navigation > div {
   flex: auto;
   -ms-grid-row-align: center;
       align-self: center; }
