@@ -32,6 +32,20 @@ let config = {
       filename: 'profile.html',
       minify: false
     }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/services.html'),
+      // inject: 'body',
+      chunks: ['index'],
+      filename: 'services.html',
+      minify: false
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/projects.html'),
+      // inject: 'body',
+      chunks: ['index'],
+      filename: 'projects.html',
+      minify: false
+    }),
     new MiniCssExtractPlugin({
       filename: 'styles.css'
     }),

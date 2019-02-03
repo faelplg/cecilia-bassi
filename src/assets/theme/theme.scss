@@ -20,6 +20,19 @@ a:focus {
 a:hover {
   color: #eea5a5;
 }
+a.active {
+  color: #222222;
+  cursor: default;
+}
+
+.container {
+  margin: 16px;
+}
+@media only screen and (max-width: 599px) {
+  .container {
+    margin: 8px;
+  }
+}
 
 .border-bottom--primary {
   border-bottom: 1px solid $mdc-theme-primary;

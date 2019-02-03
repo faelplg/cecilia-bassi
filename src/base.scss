@@ -14,6 +14,12 @@ body div {
   grid-template-columns: auto;
   grid-template-rows: 100px 64px 400px auto 112px;
 }
+.profile-grid {
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 100px 64px auto 112px;
+}
 .section__headline {
   font-family: Raleway, sans-serif;
   margin-bottom: 8px;
@@ -22,7 +28,8 @@ body div {
 /*
  * Topp app bar section
  */
-.grid > .section__top {
+.grid > .section__top,
+.profile-grid > .section__top {
   grid-row: 1;
 }
 .top-app-bar {
@@ -43,7 +50,8 @@ body div {
 /*
  * Navigation section
  */
-.grid > .section__navigation {
+.grid > .section__navigation,
+.profile-grid > .section__navigation {
   grid-row: 2;
   display: flex;
   flex-flow: row;
@@ -52,7 +60,8 @@ body div {
   align-items: center;
   border-bottom: 3px solid $mdc-theme-primary;
 }
-.grid > .section__navigation > div {
+.grid > .section__navigation > div,
+.profile-grid > .section__navigation > div {
   flex: auto;
   align-self: center;
 }
